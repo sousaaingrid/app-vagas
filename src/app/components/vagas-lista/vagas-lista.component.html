@@ -1,0 +1,107 @@
+<div class="container">
+    <div>
+        <label class="form-label ">Veja se há uma vaga na sua cidade:</label>
+        
+        <input type="text" class="form-control"  #busca (keyup)="0" />
+      </div>
+
+      <br>
+      <br>
+      <br>
+<div class="card" style="width: 18rem;">
+    
+    <div class="card" style="width: 69rem; padding: 1rem;" *ngFor="let v of vagas | sublista:busca.value">
+    <div class="card-body">
+      <h5 class="card-title"><strong>{{v.titulo_vaga}}</strong></h5>
+      <p class="card-text">{{v.nomeempresa}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Cidade:</strong>{{v.cidade}} - {{v.uf}}</li>
+      <li class="list-group-item"><strong>Salário:</strong>{{v.salario | currency: "BRL"}}</li>
+      <li class="list-group-item"><strong>Efetuar inscrição até:</strong>{{v.data_limite_inscricao | date : 'dd/MM/yyyy' }}</li>
+    </ul>
+
+    <form>
+      
+      <input type="submit" value="inscrever >"  (click)="inscricao()">          
+  </form>
+
+    <!-- <input class="btn btn-primary"  type="button" style="width: 90%; height: 90%;" value="Inscrever" (click)="inscricao()"> -->
+    <!-- <div class="card-body">
+      <a href="#" class="card-link">Salário: <strong>{{v.salario | currency: "BRL"}}</strong></a>
+      <a href="#" class="card-link">Local: <strong>{{v.cidade}} - {{v.uf}}</strong></a>
+    <a href="#" class="card-link">  Inscrições: <strong>{{v.data_limite_inscricao | date : 'dd/MM/yyyy' }} </strong></a>
+    
+    </div> -->
+  </div>
+  
+    
+</div>
+</div>
+
+<br>
+<br>
+<br>
+
+
+
+
+ <!-- <div class="container">
+    <div>
+      <label class="form-label text-warning">Veja se há uma vaga na sua cidade:</label>
+      <input type="text" class="form-control"  #busca (keyup)="0" />
+    </div>
+   <div class="card-lista">
+    <div class="card" style="width: 69rem; padding: 1rem;" *ngFor="let v of vagas | sublista:busca.value">
+      <div class="card-body">
+        <h5 class="card-title">{{v.titulo_vaga}}</h5>
+        <h6 class="card-subtitle">{{v.nomeempresa}}</h6>
+        
+        <p class="card-text">Salário: <strong>{{v.salario | currency: "BRL"}}</strong></p>
+        <p class="card-text">Local: <strong>{{v.cidade}} - {{v.uf}}</strong></p>
+        <p class="card-text">Inscrições: <strong>{{v.data_limite_inscricao | date : 'dd/MM/yyyy' }} </strong></p>
+        
+       
+       
+      </div>
+  </div>
+   </div>
+     
+</div>  -->
+
+
+
+<!-- <div class="mb-3">
+    <label class="form label">Salario:</label>
+    <input type="text" class="form-control"  [(ngModel)]="salarioBuscado" (change)="encontrarSalario(salarioBuscado)" name="salario"  />
+    
+</div>
+  
+    
+  
+
+<table class="table table-striped">
+    <thead>
+       <tr>
+           <th>Id:</th>
+           <th>IdEmpresa:</th>
+           <th>Titulo da Vaga:</th>
+           <th>Salario:</th>           
+           <th>Inscrição:</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let v of vagas ">
+            <td>{{v.id}}</td>
+            <td>{{v.idEmpresa}}</td>
+            <td>{{v.titulo_Vaga}}</td>
+            <td>{{v.salario| currency:"BRL"}}</td>   
+            <td>{{v.salario| currency:"BRL"}}</td> 
+            <td><input class="btn btn-primary"  type="button" style="width: 90%; height: 90%;" value="Inscrever" (click)="inscricao()"></td>         
+        </tr>
+    </tbody>
+</table> -->
+
+<!-- <div>
+    <button class="btn btn-secondary"  (click)="fechar()">Voltar</button>
+</div> -->
